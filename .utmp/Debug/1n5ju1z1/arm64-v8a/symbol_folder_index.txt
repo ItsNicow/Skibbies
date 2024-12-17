@@ -1,0 +1,1 @@
+D:\Git\Skibbies\Library\PramData\AndroidApplicationController\Cache\com.DefaultCompany.com.unity.template.mobile2D\gradle-project\unityLibrary\build\intermediates\cxx\Debug\1n5ju1z1\obj\arm64-v8a

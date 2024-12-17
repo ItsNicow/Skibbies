@@ -5,7 +5,7 @@ using System.Collections;
 
 public class LocationManager : MonoBehaviour
 {
-    public TMP_Text testDisplayText;
+    public TMP_Text TestDisplayText;
 
     void Start()
     {
@@ -20,12 +20,7 @@ public class LocationManager : MonoBehaviour
 
     void Update()
     {
-        if (!Input.location.isEnabledByUser)
-        {
-            testDisplayText.text = "Localisation: OFF";
-            return;
-        }
-        testDisplayText.text = "Localisation: ON";
+        TestDisplayText.text = "Localisation:" + Input.location.isEnabledByUser;
     }
 
     void InitLocation()
@@ -45,18 +40,18 @@ public class LocationManager : MonoBehaviour
     {
         if (!Input.location.isEnabledByUser)
         {
-            testDisplayText.text = "Localisation: OFF";
+            TestDisplayText.text = "Localisation: OFF";
             PromptEnableLocation();
             return;
         }
-        testDisplayText.text = "Localisation: ON";
+        TestDisplayText.text = "Localisation: ON";
 
         StartCoroutine(StartLocation());
     }
 
     void PromptEnableLocation()
     {
-        testDisplayText.text = "Please enable localisation.";
+        TestDisplayText.text = "Please enable localisation.";
 
         #if UNITY_ANDROID
         OpenLocationSettings();
@@ -93,12 +88,12 @@ public class LocationManager : MonoBehaviour
 
         if (timeout <= 0)
         {
-            testDisplayText.text = "Timed out initializing location services.";
+            TestDisplayText.text = "Timed out initializing location services.";
             yield break;
         }
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            testDisplayText.text = "Failed to determine device location.";
+            TestDisplayText.text = "Failed to determine device location.";
             yield break;
         }
     }
